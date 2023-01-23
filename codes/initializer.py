@@ -441,46 +441,6 @@ for init_t in range(NUMBER_NODES):
     # First_time of a node, is assigned to the init_time of the node
     nodes[init_t].init_time = all_event[init_t][0]
 
-# # ----------------------------- Relay Node Selection -----------------------------
-#
-# # Dividing nodes into 16 groups based on their position
-# divs = dict()
-# steps = 10
-# for i in range(NUMBER_NODES):
-#     divs[i] = []
-#
-# for i in range(0, ENVIRONMENT + 1, steps):
-#     for k in range(NUMBER_NODES):
-#         if i <= nodes[k].Xposition < i + steps:
-#             divs[i].append(nodes[k].ID)
-#
-# divs_list = []
-#
-# for key in divs:
-#     if divs[key] != []:
-#         divs_list.append(divs[key])
-#
-#
-# new_list_div = []
-# for i in range(len(divs_list)):
-#     new_list_div.append([])
-#     for j in range(len(divs_list)):
-#         new_list_div[i].append([])
-#
-# for i in range(len(new_list_div)):
-#     for m in range(len(divs_list[i])):
-#         for k in range(0, ENVIRONMENT + 1, steps):
-#             if k <= nodes[m].Yposition < k + steps:
-#                 index = k // steps
-#                 new_list_div[i][index].append(nodes[m].ID)
-#
-# count = 0
-# for i in range(len(new_list_div)):
-#     for j in range(len(new_list_div[i])):
-#         count += len(new_list_div[i][j])
-# print(count)
-# print(new_list_div)
-
 # --------------------------- Plot Network Topology ---------------------------
 # print(nx.info(Gar))
 fig = figure()  # it is possible to use figsize=(num, num)
